@@ -1,0 +1,313 @@
+/* LasFlores25O25 */
+
+/* __GLOBAL__ */
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url('font/JetBrainsMono-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url('font/JetBrainsMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --size: 10px; /* default desde js */
+
+  --tachar_encargos: none;
+  /* --tachar_encargos: line-through; */
+
+  --c_p_r: 250;
+  --c_p_g: 235;
+  --c_p_b: 215;
+  --c_primario: rgb(var(--c_p_r), var(--c_p_g), var(--c_p_b));
+  --c_secundario: rgba(var(--c_p_r), var(--c_p_g), var(--c_p_b), 0.5);
+
+  --c_f_r: 12;
+  --c_f_g: 12;
+  --c_f_b: 10;
+  --c_fondo: rgb(var(--c_f_r), var(--c_f_g), var(--c_f_b));
+
+  --c_i_r: calc((var(--c_p_r) - var(--c_f_r)) / 2);
+  --c_i_g: calc((var(--c_p_g) - var(--c_f_g)) / 2);
+  --c_i_b: calc((var(--c_p_b) - var(--c_f_b)) / 2);
+  --c_intermedio: rgb(var(--c_i_r), var(--c_i_g), var(--c_i_b));
+}
+
+html {
+  font-size: var(--size);
+  line-height: 1.4;
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--c_primario);
+  background-color: var(--c_fondo);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: rgba(0, 0, 0, 100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c_secundario);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c_primario);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1.5rem 0 1.5rem;
+  width: auto;
+  max-width: 60rem;
+  justify-content: center;
+}
+
+a {
+  color: var(--c_primario);
+}
+
+a:hover {
+  color: var(--c_secundario);
+}
+
+hr {
+  border-color: var(--c_secundario);
+}
+
+/* __CORTINA__ */
+
+#cortina {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c_intermedio);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.oculto {
+  display: none;
+}
+
+/* __NAV__ */
+
+nav {
+  display: flex;
+  padding-top: 0.6rem;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+#div_temas {
+  width: auto;
+}
+
+#div_zoom {
+  width: auto;
+  text-align: center;
+}
+
+.btn_span:hover  {
+  cursor: pointer;
+  color: var(--c_secundario)
+}
+
+#div_lengs {
+  width: auto;
+  text-align: right;
+}
+
+.btn_leng {
+  text-decoration: none;
+}
+
+#sel_leng {
+  text-decoration: underline;
+}
+
+/* __HEADER__ */
+
+header {
+  text-align: center;
+}
+
+#hr_header_sup {
+  margin: 1rem 0 9rem 0;
+}
+
+#h3_lf25 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+#h3_spgt {
+  margin: 0;
+  padding: 0.4rem 0 0 0;
+  font-size: 3rem;
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem 0 3rem 0;
+  font-size: 6rem;
+}
+
+#h3_actu {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--c_secundario);
+}
+
+#hr_header_inf {
+  margin: 8rem 0 3rem 0;
+}
+
+/* __TEXTO__ */
+
+.sec_text {
+  font-size: 1.6rem;
+}
+
+#p_aste {
+  color: var(--c_secundario);
+}
+
+/* __MAPAS__ */
+
+#div_lugares {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0 1.4rem 0;
+}
+
+.mapa {
+  width: 13rem;
+}
+
+.p_lugar {
+  margin: 2rem 0 0 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* __MEDIDAS__ */
+
+.div_item {
+  margin: 1rem;
+  margin-bottom: 4rem;
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  border-style: ridge;
+  border-width: 0.2rem;
+  border-color: var(--c_secundario);
+}
+
+#primer_item {
+  margin-top: 5rem;
+}
+
+h2 {
+  margin: 0;
+  padding-top: 2.4rem;
+  font-size: 2.2rem;
+}
+
+.div_item td {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.p_inter {
+  padding-top: 0.4rem;
+  font-size: 1.6rem;
+  color: var(--c_secundario);
+}
+
+/* __QUE HACER__ */
+
+h4 {
+  margin: 0;
+  padding-top: 2.4rem;
+  font-size: 3.8rem;
+}
+
+/* __CONTACTO__ */
+
+#hr_addr_sup {
+  margin: 4rem 0 3rem 0;
+}
+
+address {
+  text-align: center;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+h5 {
+  margin: 0;
+  padding: 2rem 0 1rem 0;
+  font-size: 2.6rem;
+}
+
+#hr_addr_inf {
+  margin: 6rem 0 4rem 0;
+}
+
+/* __FOOTER__ */
+
+footer {
+  padding: 0 9rem;
+  font-size: 1.5rem;
+}
+
+#creditos {
+  padding: 2rem 0;
+  color: var(--c_secundario);
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#creditos a {
+  color: var(--c_secundario);
+}
+
+/* __FINAL__ */
+
+strong {
+  font-weight: bold;
+}
+
+.tacha {
+  text-decoration: var(--tachar_encargos);
+  /* color: var(--c_secundario); */
+}
+
+.not {
+  visibility: hidden;
+}
+
+
+
+
